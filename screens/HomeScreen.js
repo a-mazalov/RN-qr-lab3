@@ -37,7 +37,7 @@ export class HomeScreen extends Component {
                 Roboto_medium: require('../node_modules/native-base/Fonts/Roboto_medium.ttf')
             })
 
-            const getItems = await AsyncStorage.getItem('items')
+            const getItems = await AsyncStorage.getItem('labtwoitems')
 			const parsedItems = JSON.parse(getItems)
 			console.log(parsedItems);
             this.setState({ isDataReady: true, items: parsedItems || {} })
@@ -94,7 +94,7 @@ export class HomeScreen extends Component {
     }
 
     saveItems = newItems => {
-        const saveItems = AsyncStorage.setItem('items', JSON.stringify(newItems))
+        const saveItems = AsyncStorage.setItem('labtwoitems', JSON.stringify(newItems))
 	}
 
 	onPressFab = () => {
